@@ -34,16 +34,13 @@ function displayIngredient(){
     event.preventDefault();
     var newIngredient = $("#ingredient-input").val().trim();
     popularIngredients.push(newIngredient)
-    
     displayIngredient()
     $("#ingredient-input").val("");
 
   })
 
 displayIngredient();
-
  $("#submit-button").on("click", function(){
-
   displayRecipe()
 
 });
@@ -62,31 +59,20 @@ $.ajax({
 }).then(function(response) {
   console.log(response);
 
+    for (var i =0; i<10;i++){
+      var recipeDiv = $("<div>");
+      var recipeImage = $("<img>")
+      var recipeTitle = $("<div>")
 
+      recipeImage.attr("src", response[i].image);
+      recipeTitle.text("Title: "+ response[i].title)
 
+      recipeDiv.append(recipeImage, recipeTitle)
+      $("#recipesection").append(recipeDiv);
 
+    console.log(recipeImage)
+    console.log(recipeTitle)
 
-for (var i =0; i<10;i++){
-  var recipeDiv = $("<div>");
-   
-
-  var recipeImage = $("<img>")
-  var recipeTitle = $("<div>")
-
-  recipeImage.attr("src", response[i].image);
-  
-  recipeTitle.text("Title: "+ response[i].title)
-
-  recipeDiv.append(recipeImage, recipeTitle)
-  $("#recipesection").append(recipeDiv);
-
-
-console.log(recipeImage)
-console.log(recipeTitle)
-
-
-  
-}
-})
-
+      }
+  })
 };
