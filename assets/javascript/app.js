@@ -19,36 +19,32 @@ function displayIngredient(){
 
   for (var i =0; i<popularIngredients.length; i++){
     var newButton = $("<button>").text(popularIngredients[i]);
-      //gives the button a class of new button
-          newButton.addClass("ingredients");
-          //gives the data attribute of data-name
-          newButton.attr("data-name", popularIngredients[i]);
-          //puts button in button section
-          $("#ingredientsection").append(newButton);
+        //gives the button a class of new button
+        newButton.addClass("ingredients");
+        //gives the data attribute of data-name
+        newButton.attr("data-name", popularIngredients[i]);
+        //puts button in button section
+        $("#ingredientsection").append(newButton);
     }
   }
 
 
   $("#add-ingredient-button").on("click", function(event){
-
     event.preventDefault();
     var newIngredient = $("#ingredient-input").val().trim();
     popularIngredients.push(newIngredient)
     displayIngredient()
     $("#ingredient-input").val("");
-
   })
+
 
 displayIngredient();
  $("#submit-button").on("click", function(){
   displayRecipe()
-
 });
-
 
 function displayRecipe(){
 console.log("it worked")
-// var movie = $(this).attr("data-name");
 
 $.ajax({
   url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=apples%2Cflour%2Csugar",
