@@ -1,27 +1,6 @@
 
-// var ingredient = "chicken+steak";
-// $.ajax({
-//     url: "https://api.edamam.com/search?q="+ ingredient + "&app_id=b8fd7b5e&app_key=afe2eb090dd94ac02af9b397851a630a",
-//     method: "GET"
-//   }).then(function(response) {
-//     console.log(response)
-//   });
-
-
   var ingredient = ["eggs+", "apples+", "rice"];
   var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient;
-   
-  $.ajax({
-    url: queryUrl,
-    headers: { 
-      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-      'X-RapidAPI-Key': '98db7bca28msh8d5ab6517d13d17p17dbecjsn45b21b9d6bda'},
-    method: "GET"
-  }).then(function(response) {
-    var recipe = response
-    console.log(recipe);
-  });
-
   
 
   var popularIngredients = ["chicken", "steak", "pork", "salt", "cumin", "tomatoes", "eggs", "milk", "rice", "cheese", "chicken broth", "tomato paste", "rolled oats", "nuts", "worcestershire sauce", "flour", "garlic", "onions", "oregano", "cinnamon", "cayenne", "black pepper", "kosher salt", "yogurt", "oil", "vingear", "potatoes", "syrup", "beans", "lemons", "tuna", "butter", "bell peppers", "sugar"]
