@@ -19,17 +19,41 @@
       <h1 id="title">Whats in your Fridge</h1>
       <h3 id="sub-title">Select from the following ingredients</h3>
    </header>
-   
+
    <!-- Main Section -->
    <main>
       <!-- Ingredient Selection -->
       <section id="ingredients-section">
-         <button type="button" id="meats">Meats</button>
-         <button type="button" id="dairy">Dairy</button>
-         <button type="button" id="grains">Grains</button>
-         <button type="button" id="veggies">Veggies</button>
-         <button type="button" id="fruit">Fruits</button>
-         <button type="button" id="spices">Spices</button>
+         <div id="meats-display" class="ingredients-display">
+            <h3 class="ingredients-header">Meats</h3>
+            <button type="button" id="meats">Button 1</button>
+            <button type="button" id="meats">Button 2</button>
+         </div>
+         <div id="dairy-display" class="ingredients-display">
+            <h3 class="ingredients-header">Dairy</h3>
+            <button type="button" id="dairy">Button 1</button>
+            <button type="button" id="dairy">Button 2</button>
+         </div>
+         <div id="grains-display" class="ingredients-display">
+            <h3 class="ingredients-header">Grains</h3>
+            <button type="button" id="grains">Button 1</button>
+            <button type="button" id="grains">Button 2</button>
+         </div>
+         <div id="veggies-display" class="ingredients-display">
+            <h3 class="ingredients-header">Veggies</h3>
+            <button type="button" id="veggies">Button 1</button>
+            <button type="button" id="veggies">Button 2</button>
+         </div>
+         <div id="fruits-display" class="ingredients-display">
+            <h3 class="ingredients-header">Fruits</h3>
+            <button type="button" id="fruit">Button 1</button>
+            <button type="button" id="fruit">Button 2</button>
+         </div>
+         <div id="spices-display" class="ingredients-display">
+            <h3 class="ingredients-header">Spices</h3>
+            <button type="button" id="spices">Button 1</button>
+            <button type="button" id="spices">Button 2</button>
+         </div>
       </section>
 
       <!-- Search bar -->
@@ -39,7 +63,7 @@
             <input type="submit" value="Add Ingredient">
          </form>
       </section>
-      
+
       <!-- display chosen ingredients -->
       <div id="display-ingredients">
          <span class="ingredients">chicken</span>
@@ -68,8 +92,8 @@
       </section>
    </main>
 
-<!-- Javascript File -->
-<script src="assets/javascript/app.js"></script>
+   <!-- Javascript File -->
+   <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
