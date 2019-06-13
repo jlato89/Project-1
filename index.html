@@ -14,7 +14,62 @@
 </head>
 
 <body>
+   <!-- Header -->
+   <header>
+      <h1 id="title">Whats in your Fridge</h1>
+      <h3 id="sub-title">Select from the following ingredients</h3>
+   </header>
+   
+   <!-- Main Section -->
+   <main>
+      <!-- Ingredient Selection -->
+      <section id="ingredients-section">
+         <button type="button" id="meats">Meats</button>
+         <button type="button" id="dairy">Dairy</button>
+         <button type="button" id="grains">Grains</button>
+         <button type="button" id="veggies">Veggies</button>
+         <button type="button" id="fruit">Fruits</button>
+         <button type="button" id="spices">Spices</button>
+      </section>
 
+      <!-- Search bar -->
+      <section id="search-section">
+         <form action="">
+            <input type="text" name="ingredient" id="ingredient"><br>
+            <input type="submit" value="Add Ingredient">
+         </form>
+      </section>
+      
+      <!-- display chosen ingredients -->
+      <div id="display-ingredients">
+         <span class="ingredients">chicken</span>
+      </div>
+
+      <!-- Results -->
+      <section id="recipe-section">
+         <div class="recipe-result">
+            <div class="result-title">Title</div>
+            <img class="result-img" src="https://via.placeholder.com/150" alt="Test Img">
+            <br>
+            <a class="result-link" href="#" target="_blank">More Info</a>
+         </div>
+         <div class="recipe-result">
+            <div class="result-title">Title</div>
+            <img class="result-img" src="https://via.placeholder.com/150" alt="Test Img">
+            <br>
+            <a class="result-link" href="#" target="_blank">More Info</a>
+         </div>
+         <div class="recipe-result">
+            <div class="result-title">Title</div>
+            <img class="result-img" src="https://via.placeholder.com/150" alt="Test Img">
+            <br>
+            <a class="result-link" href="#" target="_blank">More Info</a>
+         </div>
+      </section>
+   </main>
+
+<!-- Javascript File -->
+<script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
