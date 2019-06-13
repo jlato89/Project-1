@@ -1,0 +1,69 @@
+/* !General Styles! */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap');
+
+body {
+   font-family: 'Noto Sans HK', sans-serif;
+   height: 100%;
+   width: 75%;
+   margin: auto;
+}
+.ingr-header {
+   text-align: center;
+   margin-top: 0;
+   margin-bottom: 5px;
+}
+
+/* !Header! */
+header {
+   text-align: center;
+}
+   #title {
+      font-size: 4rem;
+      text-decoration-line: underline;
+      margin-bottom: 20px;
+   }
+   #sub-title {
+      font-style: italic;
+      margin-top: 0px;
+      margin-bottom: 40px
+   }
+
+/* !Main Section! */
+   /* Ingredient Section */
+#ingr-section {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+   .ingr-display {
+      border: 1px solid black;
+      flex-basis: 15%;
+   }
+      .ingr-item {
+         margin: 5px;
+      }
+
+   /* Search Bar */
+#search-section {
+   text-align: center;
+   margin-top: 20px;
+}
+
+   /* Display Chosen Ingredients */
+#ingr-list {
+   text-align: center;
+   margin: 25px;
+}
+   .ingr-sub-header {
+      font-size: .6rem;
+      margin-top: 0;
+   }
+   .chosen-ingr {
+      border: 1px solid black;
+   }
+
+   /* Recipe Results */
+#recipe-section {
+   display: flex;
+   justify-content: space-between;
+}
