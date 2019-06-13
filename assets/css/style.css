@@ -1,9 +1,9 @@
 /* !General Styles! */
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 
 body {
    font-family: 'Noto Sans HK', sans-serif;
-   height: 100%;
    width: 75%;
    margin: auto;
 }
@@ -13,16 +13,16 @@ body {
    background-size: cover;
    background-repeat: no-repeat;
 }
-#bg-img:after {
-   content: '';
-   background: rgba(68, 68, 68, 0.6);
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   top: 0;
-   right: 0;
-   z-index: -1;
-}
+   #bg-img:after {
+      content: '';
+      background: rgba(68, 68, 68, 0.6);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: -1;
+   }
 .ingr-header {
    text-align: center;
    margin-top: 0;
@@ -34,7 +34,8 @@ header {
    text-align: center;
 }
    #title {
-      font-size: 4rem;
+      font-family: 'Indie Flower', cursive;
+      font-size: 5rem;
       text-decoration-line: underline;
       margin-bottom: 20px;
    }
@@ -76,10 +77,22 @@ header {
    }
    .chosen-ingr {
       border: 1px solid black;
+      margin: 4px;
    }
+      .chosen-ingr:hover {
+         cursor: pointer;
+      }
 
    /* Recipe Results */
 #recipe-section {
    display: flex;
    justify-content: space-between;
+   flex-wrap: wrap;
 }
+   .recipe-result {
+      margin: 10px;
+   }
+      .recipe-result img {
+         height: 250px;
+         width: 250px;
+      }
