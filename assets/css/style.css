@@ -58,6 +58,12 @@ header {
       .ingr-item {
          margin: 5px;
       }
+#meats-display .ingr-header { background: red; }
+#dairy-display .ingr-header { background: whitesmoke; }
+#grains-display .ingr-header { background: tan; }
+#veggies-display .ingr-header { background: green; }
+#fruits-display .ingr-header { background: lightcoral; }
+#spices-display .ingr-header { background: brown; }
 
    /* Search Bar */
 #search-section {
