@@ -14,119 +14,141 @@
 </head>
 
 <body id="bg-img">
-   <!-- Header -->
-   <header>
-      <h1 id="title">Whats in your Fridge?</h1>
-      <h4 id="sub-title">Choose from the following ingredients, or search for your own, to find recipes that use those ingredients</h3>
-   </header>
+   <div class="wrapper">
+      <div class="container">
 
-   <!-- Main Section -->
-   <main>
-      <!-- Ingredient Selection -->
-      <section id="ingr-section">
-         <div id="meats-display" class="ingr-display">
-            <h3 class="ingr-header">Meats</h3>
-            <button type="button" id="meats" class="ingr-item">Button 1</button>
-            <button type="button" id="meats" class="ingr-item">Button 2</button>
-         </div>
-         <div id="dairy-display" class="ingr-display">
-            <h3 class="ingr-header">Dairy</h3>
-            <button type="button" id="dairy" class="ingr-item">Button 1</button>
-            <button type="button" id="dairy" class="ingr-item">Button 2</button>
-            <button type="button" id="dairy" class="ingr-item">Button 2</button>
-         </div>
-         <div id="grains-display" class="ingr-display">
-            <h3 class="ingr-header">Grains</h3>
-            <button type="button" id="grains" class="ingr-item">Button 1</button>
-            <button type="button" id="grains" class="ingr-item">Button 2</button>
-         </div>
-         <div id="veggies-display" class="ingr-display">
-            <h3 class="ingr-header">Veggies</h3>
-            <button type="button" id="veggies" class="ingr-item">Button 1</button>
-            <button type="button" id="veggies" class="ingr-item">Button 2</button>
-         </div>
-         <div id="fruits-display" class="ingr-display">
-            <h3 class="ingr-header">Fruits</h3>
-            <button type="button" id="fruit" class="ingr-item">Button 1</button>
-            <button type="button" id="fruit" class="ingr-item">Button 2</button>
-         </div>
-         <div id="spices-display" class="ingr-display">
-            <h3 class="ingr-header">Spices</h3>
-            <button type="button" id="spices" class="ingr-item">Button 1</button>
-            <button type="button" id="spices" class="ingr-item">Button 2</button>
-         </div>
-      </section>
+         <!-- Header -->
+         <header>
+            <h1 id="title">Whats in your Fridge?</h1>
+            <h4 id="sub-title">Choose from the following ingredients, or search for your own, to find recipes that use
+               those ingredients</h3>
+         </header>
 
-      <!-- Search bar -->
-      <section id="search-section">
-         <form action="">
-            <input type="text" name="ingredient" id="ingredient" size="50%"><br>
-            <input type="submit" value="Add Ingredient">
-         </form>
-      </section>
+         <!-- Main Section -->
+         <main>
+            <!-- Ingredient Selection -->
+            <section id="ingr-section">
+               <div id="meats-display" class="ingr-display">
+                  <h3 class="ingr-header">Meats</h3>
+                  <button type="button" id="meats" class="ingr-item">Button 1</button>
+                  <button type="button" id="meats" class="ingr-item">Button 2</button>
+               </div>
+               <div id="dairy-display" class="ingr-display">
+                  <h3 class="ingr-header">Dairy</h3>
+                  <button type="button" id="dairy" class="ingr-item">Button 1</button>
+                  <button type="button" id="dairy" class="ingr-item">Button 2</button>
+                  <button type="button" id="dairy" class="ingr-item">Button 2</button>
+               </div>
+               <div id="grains-display" class="ingr-display">
+                  <h3 class="ingr-header">Grains</h3>
+                  <button type="button" id="grains" class="ingr-item">Button 1</button>
+                  <button type="button" id="grains" class="ingr-item">Button 2</button>
+               </div>
+               <div id="veggies-display" class="ingr-display">
+                  <h3 class="ingr-header">Veggies</h3>
+                  <button type="button" id="veggies" class="ingr-item">Button 1</button>
+                  <button type="button" id="veggies" class="ingr-item">Button 2</button>
+               </div>
+               <div id="fruits-display" class="ingr-display">
+                  <h3 class="ingr-header">Fruits</h3>
+                  <button type="button" id="fruit" class="ingr-item">Button 1</button>
+                  <button type="button" id="fruit" class="ingr-item">Button 2</button>
+               </div>
+               <div id="spices-display" class="ingr-display">
+                  <h3 class="ingr-header">Spices</h3>
+                  <button type="button" id="spices" class="ingr-item">Button 1</button>
+                  <button type="button" id="spices" class="ingr-item">Button 2</button>
+               </div>
+            </section>
 
-      <!-- display chosen ingr -->
-      <div id="ingr-list">
-         <h4 class="ingr-header">Your Chosen Ingredients</h3>
-         <h5 class="ingr-sub-header">Click an ingredient to remove</h5>
-         <span class="chosen-ingr">chicken</span>
-         <span class="chosen-ingr">chicken</span>
+            <!-- Search bar -->
+            <section id="search-section">
+               <form action="">
+                  <input type="text" name="ingredient" id="ingredient" size="50%"><br>
+                  <input type="submit" value="Add Ingredient">
+               </form>
+            </section>
+
+            <!-- display chosen ingr -->
+            <div id="ingr-list">
+               <h4 class="ingr-header">Your Chosen Ingredients</h3>
+                  <h5 class="ingr-sub-header">Click an ingredient to remove</h5>
+                  <span class="chosen-ingr">chicken</span>
+                  <span class="chosen-ingr">chicken</span>
+            </div>
+
+            <!-- Recipe Results -->
+            <section id="recipe-section">
+               <div class="recipe-result">
+                  <div class="recipe-title">Creamy garlic chicken</div>
+                  <img class="recipe-img"
+                     src="https://www.saltandlavender.com/wp-content/uploads/2018/12/creamy-garlic-chicken-recipe-1.jpg"
+                     alt="Test Img">
+                  <br>
+                  <a class="recipe-link" href="#" target="_blank">More Info</a>
+               </div>
+               <div class="recipe-result">
+                  <div class="recipe-title">Pot of frozen chicken</div>
+                  <img class="recipe-img"
+                     src="https://ifoodreal.com/wp-content/uploads/2018/02/instant-pot-frozen-chicken-2.jpg"
+                     alt="Test Img">
+                  <br>
+                  <a class="recipe-link" href="#" target="_blank">More Info</a>
+               </div>
+               <div class="recipe-result">
+                  <div class="recipe-title">Cranberry balsamic roast chicken</div>
+                  <img class="recipe-img"
+                     src="https://purewows3.imgix.net/images/articles/2017_11/cranberry-balsamic-roast-chicken-9211.jpg"
+                     alt="Test Img">
+                  <br>
+                  <a class="recipe-link" href="#" target="_blank">More Info</a>
+               </div>
+               <div class="recipe-result">
+                  <div class="recipe-title">Double Crunch Honey Garlic Chicken Breasts</div>
+                  <img class="recipe-img"
+                     src="https://www.rockrecipes.com/wp-content/uploads/2012/04/Double-Crunch-Honey-Garlic-Chicken-Breasts-edit2-1.jpg"
+                     alt="Test Img">
+                  <br>
+                  <a class="recipe-link" href="#" target="_blank">More Info</a>
+               </div>
+               <div class="recipe-result">
+                  <div class="recipe-title">Creamy garlic chicken</div>
+                  <img class="recipe-img"
+                     src="https://www.saltandlavender.com/wp-content/uploads/2018/12/creamy-garlic-chicken-recipe-1.jpg"
+                     alt="Test Img">
+                  <br>
+                  <a class="recipe-link" href="#" target="_blank">More Info</a>
+               </div>
+               <div class="recipe-result">
+                  <div class="recipe-title">Pot of frozen chicken</div>
+                  <img class="recipe-img"
+                     src="https://ifoodreal.com/wp-content/uploads/2018/02/instant-pot-frozen-chicken-2.jpg"
+                     alt="Test Img">
+                  <br>
+                  <a class="recipe-link" href="#" target="_blank">More Info</a>
+               </div>
+               <div class="recipe-result">
+                  <div class="recipe-title">Cranberry balsamic roast chicken</div>
+                  <img class="recipe-img"
+                     src="https://purewows3.imgix.net/images/articles/2017_11/cranberry-balsamic-roast-chicken-9211.jpg"
+                     alt="Test Img">
+                  <br>
+                  <a class="recipe-link" href="#" target="_blank">More Info</a>
+               </div>
+               <div class="recipe-result">
+                  <div class="recipe-title">Double Crunch Honey Garlic Chicken Breasts</div>
+                  <img class="recipe-img"
+                     src="https://www.rockrecipes.com/wp-content/uploads/2012/04/Double-Crunch-Honey-Garlic-Chicken-Breasts-edit2-1.jpg"
+                     alt="Test Img">
+                  <br>
+                  <a class="recipe-link" href="#" target="_blank">More Info</a>
+               </div>
+            </section>
+         </main>
+
+         <!-- Javascript File -->
       </div>
-
-      <!-- Recipe Results -->
-      <section id="recipe-section">
-         <div class="recipe-result">
-            <div class="recipe-title">Creamy garlic chicken</div>
-            <img class="recipe-img" src="https://www.saltandlavender.com/wp-content/uploads/2018/12/creamy-garlic-chicken-recipe-1.jpg" alt="Test Img">
-            <br>
-            <a class="recipe-link" href="#" target="_blank">More Info</a>
-         </div>
-         <div class="recipe-result">
-            <div class="recipe-title">Pot of frozen chicken</div>
-            <img class="recipe-img" src="https://ifoodreal.com/wp-content/uploads/2018/02/instant-pot-frozen-chicken-2.jpg" alt="Test Img">
-            <br>
-            <a class="recipe-link" href="#" target="_blank">More Info</a>
-         </div>
-         <div class="recipe-result">
-            <div class="recipe-title">Cranberry balsamic roast chicken</div>
-            <img class="recipe-img" src="https://purewows3.imgix.net/images/articles/2017_11/cranberry-balsamic-roast-chicken-9211.jpg" alt="Test Img">
-            <br>
-            <a class="recipe-link" href="#" target="_blank">More Info</a>
-         </div>
-         <div class="recipe-result">
-            <div class="recipe-title">Double Crunch Honey Garlic Chicken Breasts</div>
-            <img class="recipe-img" src="https://www.rockrecipes.com/wp-content/uploads/2012/04/Double-Crunch-Honey-Garlic-Chicken-Breasts-edit2-1.jpg" alt="Test Img">
-            <br>
-            <a class="recipe-link" href="#" target="_blank">More Info</a>
-         </div>
-         <div class="recipe-result">
-            <div class="recipe-title">Creamy garlic chicken</div>
-            <img class="recipe-img" src="https://www.saltandlavender.com/wp-content/uploads/2018/12/creamy-garlic-chicken-recipe-1.jpg" alt="Test Img">
-            <br>
-            <a class="recipe-link" href="#" target="_blank">More Info</a>
-         </div>
-         <div class="recipe-result">
-            <div class="recipe-title">Pot of frozen chicken</div>
-            <img class="recipe-img" src="https://ifoodreal.com/wp-content/uploads/2018/02/instant-pot-frozen-chicken-2.jpg" alt="Test Img">
-            <br>
-            <a class="recipe-link" href="#" target="_blank">More Info</a>
-         </div>
-         <div class="recipe-result">
-            <div class="recipe-title">Cranberry balsamic roast chicken</div>
-            <img class="recipe-img" src="https://purewows3.imgix.net/images/articles/2017_11/cranberry-balsamic-roast-chicken-9211.jpg" alt="Test Img">
-            <br>
-            <a class="recipe-link" href="#" target="_blank">More Info</a>
-         </div>
-         <div class="recipe-result">
-            <div class="recipe-title">Double Crunch Honey Garlic Chicken Breasts</div>
-            <img class="recipe-img" src="https://www.rockrecipes.com/wp-content/uploads/2012/04/Double-Crunch-Honey-Garlic-Chicken-Breasts-edit2-1.jpg" alt="Test Img">
-            <br>
-            <a class="recipe-link" href="#" target="_blank">More Info</a>
-         </div>
-      </section>
-   </main>
-
-   <!-- Javascript File -->
+   </div>
    <script src="assets/javascript/app.js"></script>
 </body>
 
