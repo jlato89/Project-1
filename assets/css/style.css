@@ -7,7 +7,8 @@ body {
    margin: auto;
 }
 #bg-img {
-   background: url(../images/bg.jif);
+   /* background: url(../images/bg.jif); */
+   background: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65);
    background-size: cover;
    background-repeat: no-repeat;
 }
