@@ -6,27 +6,17 @@ body {
    font-family: 'Noto Sans HK', sans-serif;
    margin: auto;
 }
-
 #bg-img {
    background: url(../images/bg.jif);
    background-size: cover;
    background-repeat: no-repeat;
 }
-
-.wrapper{
-   background: rgba(68, 68, 68, 0.6);
-   
+.overlay{
+   background: rgba(68, 68, 68, 0.5);
 }
-
-.container {
+main {
    width: 75%;
    margin: 0 auto;
-}
-
-.ingr-header {
-   text-align: center;
-   margin-top: 0;
-   margin-bottom: 5px;
 }
 
 /* !Header! */
@@ -34,19 +24,19 @@ header {
    text-align: center;
 }
 
-#title {
-   margin-top: 0;
-   line-height: 1.5;
-   font-family: 'Indie Flower', cursive;
-   font-size: 5rem;
-   text-decoration-line: underline;
-   margin-bottom: 20px;
-}
-#sub-title {
-   font-style: italic;
-   margin-top: 0px;
-   margin-bottom: 40px
-}
+   #title {
+      margin-top: 0;
+      line-height: 1.5;
+      font-family: 'Indie Flower', cursive;
+      font-size: 5rem;
+      text-decoration-line: underline;
+      margin-bottom: 20px;
+   }
+   #sub-title {
+      font-style: italic;
+      margin-top: 0px;
+      margin-bottom: 40px
+   }
 
 /* !Main Section! */
    /* Ingredient Section */
@@ -55,14 +45,18 @@ header {
    justify-content: space-between;
    flex-wrap: wrap;
 }
-.ingr-display {
-   border: 1px solid black;
-   flex-basis: 15%;
-}
-
-.ingr-item {
-   margin: 5px;
-}
+   .ingr-display {
+      border: 1px solid black;
+      flex-basis: 15%;
+   }
+      .ingr-header {
+         text-align: center;
+         margin-top: 0;
+         margin-bottom: 5px;
+      }   
+      .ingr-item {
+         margin: 5px;
+      }
 
    /* Search Bar */
 #search-section {
@@ -75,17 +69,17 @@ header {
    text-align: center;
    margin: 25px;
 }
-.ingr-sub-header {
-   font-size: .6rem;
-   margin-top: 0;
-}
-.chosen-ingr {
-   border: 1px solid black;
-   margin: 4px;
-}
-.chosen-ingr:hover {
-   cursor: pointer;
-}
+   .ingr-sub-header {
+      font-size: .6rem;
+      margin-top: 0;
+   }
+   .chosen-ingr {
+      border: 1px solid black;
+      margin: 4px;
+   }
+      .chosen-ingr:hover {
+         cursor: pointer;
+      }
 
    /* Recipe Results */
 #recipe-section {
