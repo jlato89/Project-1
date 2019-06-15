@@ -8,8 +8,8 @@ body {
    margin: auto;
 }
 #bg-img {
-   /* background: url(../images/bg.jif); */
-   background: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65);
+   background: url(../images/bg.jif);
+   /* background: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65); */
    background-size: cover;
    background-repeat: no-repeat;
 }
@@ -19,6 +19,7 @@ body {
 main {
    width: 75%;
    margin: 0 auto;
+   padding-bottom: 20px;
 }
 
 /* !Header! */
@@ -32,7 +33,7 @@ header {
       font-family: 'Indie Flower', cursive;
       font-size: 5rem;
       text-decoration-line: underline;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
    }
    #sub-title {
       font-style: italic;
@@ -74,27 +75,38 @@ header {
    /* Search Bar */
 #search-section {
    text-align: center;
-   margin-top: 20px;
+   margin-top: 30px;
 }
 
    /* Display Chosen Ingredients */
 #chosen-ingr-section {
    text-align: center;
-   margin: 25px;
+   margin: 20px;
 }
+   #chosen-ingr-header {
+      font-weight: bold;
+      font-size: 1.5rem;
+   }
    #chosen-ingr-list {
       text-align: center;
-      margin: 25px;
+      margin: 10px;
    }
       .chosen-ingr-item {
          margin: 2px;
       }
+
+   /* Submit Button */
+#search-btn-section {
+   text-align: center;
+   margin: 20px;
+}
 
    /* Recipe Results */
 #recipe-section {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
+   border: 1px solid black;
 }
    .recipe-result {
       margin: 10px;
