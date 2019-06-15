@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 
 body {
+   color: black;
    font-family: 'Noto Sans HK', sans-serif;
    margin: auto;
 }
@@ -51,13 +52,18 @@ header {
       flex-basis: 15%;
    }
       .ingr-header {
+         font-size: 1.1rem;
          text-align: center;
+         padding: 3px;
          margin-top: 0;
          margin-bottom: 5px;
       }   
       .ingr-item {
          margin: 5px;
       }
+         .ingr-item:hover {
+            cursor: pointer;
+         }
 #meats-display .ingr-header { background: red; }
 #dairy-display .ingr-header { background: whitesmoke; }
 #grains-display .ingr-header { background: tan; }
@@ -72,22 +78,16 @@ header {
 }
 
    /* Display Chosen Ingredients */
-#ingr-list {
+#chosen-ingr-section {
    text-align: center;
    margin: 25px;
 }
-   .ingr-sub-header {
-      font-size: .6rem;
-      margin-top: 0;
+   #chosen-ingr-list {
+      text-align: center;
+      margin: 25px;
    }
-   .chosen-ingr {
-      background: darkgrey;
-      border: 1px solid black;
-      padding: 2px;
-      margin: 4px;
-   }
-      .chosen-ingr:hover {
-         cursor: pointer;
+      .chosen-ingr-item {
+         margin: 2px;
       }
 
    /* Recipe Results */
