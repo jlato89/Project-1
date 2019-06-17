@@ -1,6 +1,9 @@
+# project-1
+
 Vanderbilt Bootcamp - Week 8 project
 
-User Story:
+## User Story:
+
 As a user I want to be abe to select the ingredients that I have and add any that are not listed.
 
 I then want to take those ingredients and search through an API to find possible recipes that I can make.
