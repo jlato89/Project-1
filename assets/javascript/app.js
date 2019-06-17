@@ -1,4 +1,4 @@
-var ingredientList=[]
+
 var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
 var queryURL=  "https://the-cocktail-db.p.rapidapi.com/random.php"
 var recipeIdArray = [];
@@ -66,14 +66,18 @@ function displayRecipe() {
     }
   })
 };
-// function displayUserIngredient (){
-//     $('').each(function(){
-//     var userChoice=$(this).text().trim();
-//     ingredientList.push(userChoice)});}
 
-// console.log(ingredientList)
-
-// displayUserIngredient()
+$(document).ready(function (){
+    $('.ingr-item').on("click", function(){
+        if (userSelection= 0){
+            $('chosen-ingr-list').val("");
+        }
+            var userSelection= $(this).text().trim()+", "
+            $('#chosen-ingr-list').append(userSelection)
+            console.log(userSelection)
+        
+    });//end of click function //
+}); //end .ready function//
 
     $.ajax({
         url: queryURL,
@@ -82,14 +86,10 @@ function displayRecipe() {
             "X-RapidAPI-Key": "147749aee4mshcd867948b97e9f7p16bdacjsn257d0be55a77"
         },
         method:"GET"
-    }).then(function(response) {
+    }).then(function (response) {
         for (var i= 0; i< 1; i++){
             drinkDisplay= response[i]
             drinkName= response[i]
             console.log(response)
         }
     })
-    
-
-
-    
