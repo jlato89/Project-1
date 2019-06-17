@@ -12,6 +12,7 @@ body {
    /* background: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65); */
    background-size: cover;
    background-repeat: no-repeat;
+   background-position: top right;
 }
 .overlay{
    background: rgba(68, 68, 68, 0.5);
@@ -109,14 +110,73 @@ header {
    /* Recipe Results */
 #recipe-section {
    display: flex;
-   justify-content: space-between;
    flex-wrap: wrap;
    border: 1px solid black;
 }
    .recipe-result {
-      margin: 10px;
+      margin-left: 2.5%;
+      margin-top: 1%;
+      margin-bottom: 1.5%;
+      width: 30%;
    }
-      .recipe-result img {
-         height: 250px;
-         width: 250px;
+      .recipe-title {
+         color: #dbdbdb;
+         font-size: 1.3rem;
+         font-weight: bold;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+         overflow: hidden;   
+         margin-bottom: 2px;
       }
+      .recipe-link {
+         background: #6e6968;
+         color: #e7b14d;
+         padding: 0 5px;
+         margin-top: 0;
+      }
+
+/* !Media Query's! */
+      /* screens up to 950px */
+@media screen and (max-width: 950px) {
+   html {
+      font-size: 12px;
+   }
+   main {
+      width: 95%;
+      padding-top: 3px;
+   }
+}
+      /* screens up to 620px */
+@media screen and (max-width: 620px) {
+   html {
+      font-size: 10px;
+   }
+   #title {
+      font-size: 3rem;
+   }
+   #sub-title {
+      margin-bottom: 5%;
+   }
+   #ingr-section {
+      justify-content: space-around;
+   }
+      .ingr-display {
+         flex-direction: row;
+         min-width: 305px;
+      }
+      .ingr-header {
+         border: none;
+         width: 45px;
+         margin: 0;
+      }
+      .ingr-item {
+         margin: 5px 1px;
+      }
+   #search-section {
+      margin-top: 5%;
+   }
+   .recipe-title {
+      font-size: 1.1rem;
+      margin-bottom: 2px;
+   }
+}
