@@ -109,17 +109,15 @@ header {
    /* Recipe Results */
 #recipe-section {
    display: flex;
-   justify-content: space-between;
    flex-wrap: wrap;
    border: 1px solid black;
 }
    .recipe-result {
-      margin: 10px;
+      margin-left: 2.5%;
+      margin-top: 1%;
+      margin-bottom: 1.5%;
+      width: 30%;
    }
-      .recipe-result img {
-         height: 250px;
-         width: 250px;
-      }
 
 /* !Media Query's! */
       /* screens up to 950px */
