@@ -12,6 +12,7 @@ body {
    /* background: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65); */
    background-size: cover;
    background-repeat: no-repeat;
+   background-position: top right;
 }
 .overlay{
    background: rgba(68, 68, 68, 0.5);
