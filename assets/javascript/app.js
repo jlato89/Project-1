@@ -1,12 +1,4 @@
 var ingredientList=[]
-
-function displayUserIngredient (){
-    $('.ingr-item').each(function(){
-    var userChoice=$(this).text().trim();
-    ingredientList.push(userChoice)});}
-
-console.log(ingredientList)
-
 var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
 var queryURL=  "https://the-cocktail-db.p.rapidapi.com/random.php"
 var recipeIdArray = [];
@@ -74,6 +66,14 @@ function displayRecipe() {
     }
   })
 };
+// function displayUserIngredient (){
+//     $('').each(function(){
+//     var userChoice=$(this).text().trim();
+//     ingredientList.push(userChoice)});}
+
+// console.log(ingredientList)
+
+// displayUserIngredient()
 
     $.ajax({
         url: queryURL,
@@ -89,6 +89,7 @@ function displayRecipe() {
             console.log(response)
         }
     })
+    
 
 
     
