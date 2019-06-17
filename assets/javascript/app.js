@@ -2,50 +2,21 @@
 var ingredient = ["eggs+", "apples+", "rice+"];
 var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
 var recipeIdArray = [];
+var recipeTitleArray=[];
+var recipeImageArray = [];
+var recipeResultArray=[];
 var recipeString;
+var recipeTitle = $("<div>")
+var recipeImage = $("<img>");
+var recipeList = $("<div>");
 
-var popularIngredients = ["chicken", "steak", "pork", "salt", "cumin", "tomatoes", "eggs", "milk", "rice", "cheese", "chicken broth", "tomato paste", "rolled oats", "nuts", "worcestershire sauce", "flour", "garlic", "onions", "oregano", "cinnamon", "cayenne", "black pepper", "kosher salt", "yogurt", "oil", "vingear", "potatoes", "syrup", "beans", "lemons", "tuna", "butter", "bell peppers", "sugar"]
-// var popularMeats = [""];
-
-// var popularVegetables = [""];
-
-// var popularFruits = [""];
-
-// var popularDairy = [""];
-
-// var popularSpices = [""];
-
-function displayIngredient() {
-  $("#ingredientsection").empty();
-
-  for (var i = 0; i < popularIngredients.length; i++) {
-    var newButton = $("<button>").text(popularIngredients[i]);
-    //gives the button a class of new button
-    newButton.addClass("ingredients");
-    //gives the data attribute of data-name
-    newButton.attr("data-name", popularIngredients[i]);
-    //puts button in button section
-    $("#ingredientsection").append(newButton);
-  }
-}
-
-
-$("#add-ingredient-button").on("click", function (event) {
-  event.preventDefault();
-  var newIngredient = $("#ingredient-input").val().trim();
-  popularIngredients.push(newIngredient)
-  displayIngredient()
-  $("#ingredient-input").val("");
-})
-
-
-displayIngredient();
-$("#submit-button").on("click", function () {
+$("#submit-btn").on("click", function () {
   displayRecipe()
+  $("#recipe-section").empty();
 });
 
 function displayRecipe() {
-  console.log("it worked")
+
 
   $.ajax({
     url: queryUrl,
@@ -56,25 +27,21 @@ function displayRecipe() {
     method: "GET"
   }).then(function (response) {
 
-
-    console.log(response)
-
     for (var i = 0; i < 10; i++) {
-      var recipeDiv = $("<div>");
-      var recipeImage = $("<img>")
-      var recipeTitle = $("<div>")
-
-      recipeImage.attr("src", response[i].image);
-      recipeTitle.text("Title: " + response[i].title)
-
-      recipeDiv.append(recipeImage, recipeTitle)
-      $("#recipesection").append(recipeDiv);
-    
+      recipeTitle = response[i].title;
+      recipeImage =response[i].image;
+  
+      recipeImageArray.push(recipeImage);
+      recipeTitleArray.push(recipeTitle)
       recipeIdArray.push(response[i].id);
+
       recipeString = recipeIdArray.join('%2C');
 
     }
 
+    console.log(recipeImageArray)
+    console.log(recipeTitleArray)
+    console.log(recipeIdArray)
     ajaxRecipeId();
 
     function ajaxRecipeId() {
@@ -87,14 +54,16 @@ function displayRecipe() {
         },
         method: "GET"
       }).then(function (response) {
-
         for (var i = 0; i < 10; i++) {
-
-          var recipeList = response[i].sourceUrl
-          console.log(recipeList)
-
+          recipeList = response[i].sourceUrl;
+          recipeResultArray.push(recipeList)
+   
+         
+         
         }
+        console.log(recipeResultArray)
       })
     }
   })
 };
+
