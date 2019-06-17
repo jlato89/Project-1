@@ -65,5 +65,6 @@ function displayRecipe() {
       })
     }
   })
+  $("#recipe-section").text(recipeTitleArray,recipeImageArray, recipeIdArray, recipeResultArray)
 };
 
