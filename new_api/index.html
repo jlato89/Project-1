@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+   <link rel="stylesheet" href="assets/css/normalize.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js'></script>
+
+   <title>Whats in your Fridge</title>
+</head>
+
+<body id="bg-img">
+   <div class="overlay">
+      <main>
+
+         <!-- Title -->
+         <header>
+            <h1 id="title">Whats in your Fridge?</h1>
+            <h4 id="sub-title">Choose from the following ingredients, or search for your own, to find recipes that use
+               those ingredients</h3>
+         </header>
+
+         <!-- Ingredient Selection -->
+         <section id="ingr-section">
+            <div id="meats-display" class="ingr-display">
+               <h3 class="ingr-header">Meats</h3>
+               <a class="ingr-item button is-small is-light is-rounded">Button</a>
+               <span class="ingr-item tag is-light">Button</span>
+            </div>
+            <div id="dairy-display" class="ingr-display">
+               <h3 class="ingr-header">Dairy</h3>
+               <button type="button" id="dairy" class="ingr-item">Button 1</button>
+               <button type="button" id="dairy" class="ingr-item">Button 2</button>
+               <button type="button" id="dairy" class="ingr-item">Button 2</button>
+            </div>
+            <div id="grains-display" class="ingr-display">
+               <h3 class="ingr-header">Grains</h3>
+               <button type="button" id="grains" class="ingr-item">Button 1</button>
+               <button type="button" id="grains" class="ingr-item">Button 2</button>
+            </div>
+            <div id="veggies-display" class="ingr-display">
+               <h3 class="ingr-header">Veggies</h3>
+               <button type="button" id="veggies" class="ingr-item">Button 1</button>
+               <button type="button" id="veggies" class="ingr-item">Button 2</button>
+            </div>
+            <div id="fruits-display" class="ingr-display">
+               <h3 class="ingr-header">Fruits</h3>
+               <button type="button" id="fruit" class="ingr-item">Button 1</button>
+               <button type="button" id="fruit" class="ingr-item">Button 2</button>
+            </div>
+            <div id="spices-display" class="ingr-display">
+               <h3 class="ingr-header">Spices</h3>
+               <button type="button" id="spices" class="ingr-item">Button 1</button>
+               <button type="button" id="spices" class="ingr-item">Button 2</button>
+            </div>
+         </section>
+
+         <!-- Search bar -->
+         <section id="search-section">
+            <form action="">
+               <input type="text" name="ingredient" id="ingredient" size="50%"><br>
+               <input type="submit" value="Add Ingredient">
+            </form>
+         </section>
+
+         <!-- display chosen ingr -->
+         <div id="ingr-list">
+            <h4 class="ingr-header">Your Chosen Ingredients</h4>
+            <span class="chosen-ingr tag is-medium">
+               Chicken
+               <button class="delete is-small"></button>
+            </span>
+            <span class="chosen-ingr tag is-medium">
+               Turkey
+               <button class="delete is-small"></button>
+            </span>
+         </div>
+
+         <!-- Seach Button -->
+         <button type="submit" id="submit-btn">Search</button>
+
+         <!-- Recipe Results -->
+         <section id="recipe-section">
+            <div class="recipe-result">
+               <div class="recipe-title">Creamy garlic chicken</div>
+               <img class="recipe-img"
+                  src="https://www.saltandlavender.com/wp-content/uploads/2018/12/creamy-garlic-chicken-recipe-1.jpg"
+                  alt="Test Img">
+               <br>
+               <a class="recipe-link" href="#" target="_blank">More Info</a>
+            </div>
+         </section>
+      </main>
+   </div>
+
+   <!-- Javascript File -->
+   <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>

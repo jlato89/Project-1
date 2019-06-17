@@ -1,0 +1,105 @@
+/* !General Styles! */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+body {
+   font-family: 'Noto Sans HK', sans-serif;
+   margin: auto;
+}
+#bg-img {
+   /* background: url(../images/bg.jif); */
+   background: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+.overlay{
+   background: rgba(68, 68, 68, 0.5);
+}
+main {
+   width: 75%;
+   margin: 0 auto;
+}
+
+/* !Header! */
+header {
+   text-align: center;
+}
+
+   #title {
+      margin-top: 0;
+      line-height: 1.5;
+      font-family: 'Indie Flower', cursive;
+      font-size: 5rem;
+      text-decoration-line: underline;
+      margin-bottom: 20px;
+   }
+   #sub-title {
+      font-style: italic;
+      margin-top: 0px;
+      margin-bottom: 40px
+   }
+
+/* !Main Section! */
+   /* Ingredient Section */
+#ingr-section {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+   .ingr-display {
+      border: 1px solid black;
+      flex-basis: 15%;
+   }
+      .ingr-header {
+         text-align: center;
+         margin-top: 0;
+         margin-bottom: 5px;
+      }   
+      .ingr-item {
+         margin: 5px;
+      }
+#meats-display .ingr-header { background: red; }
+#dairy-display .ingr-header { background: whitesmoke; }
+#grains-display .ingr-header { background: tan; }
+#veggies-display .ingr-header { background: green; }
+#fruits-display .ingr-header { background: lightcoral; }
+#spices-display .ingr-header { background: brown; }
+
+   /* Search Bar */
+#search-section {
+   text-align: center;
+   margin-top: 20px;
+}
+
+   /* Display Chosen Ingredients */
+#ingr-list {
+   text-align: center;
+   margin: 25px;
+}
+   .ingr-sub-header {
+      font-size: .6rem;
+      margin-top: 0;
+   }
+   .chosen-ingr {
+      background: darkgrey;
+      border: 1px solid black;
+      padding: 2px;
+      margin: 4px;
+   }
+      .chosen-ingr:hover {
+         cursor: pointer;
+      }
+
+   /* Recipe Results */
+#recipe-section {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+   .recipe-result {
+      margin: 10px;
+   }
+      .recipe-result img {
+         height: 250px;
+         width: 250px;
+      }
