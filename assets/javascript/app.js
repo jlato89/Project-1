@@ -68,16 +68,33 @@ function displayRecipe() {
 function showRecipe(){
 
   for (var i =0; i <10; i ++){
+  
+    var recipeResult = $("<div>");
+    recipeResult.attr("class", "recipe-result");
+
 
   var recipeTitle = $("<div>");
-  recipeTitle.text("Title: " + recipeTitleArray[i]);
+  recipeTitle.html("Title: " + recipeTitleArray[i]);
+  recipeTitle.attr("class", "recipe-title")
+
 
   var recipeImage = $("<img>");
   recipeImage.attr("src", recipeImageArray[i])
+  recipeImage.attr("class", "recipe-img");
 
   var recipeList = $("<div>");
-  recipeList.text("Recipe: "+ recipeResultArray[i])
-  $("#recipe-section").append(recipeTitle, recipeImage, recipeList);
+  var thisLink = recipeResultArray[i];
+  recipeList.html(recipeResultArray[i])
+  recipeList.attr("class", "recipe-link");
+
+  var recipeLink = $("<a>");
+  recipeLink.attr("href", thisLink);
+  recipeLink.text("Recipe Link")
+    console.log(thisLink)
+  
+
+  $(".recipe-result").append(recipeTitle, recipeImage, recipeLink) ;
+  $("#recipe-section").append(recipeResult)
   }
 
 }
