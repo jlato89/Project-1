@@ -148,23 +148,17 @@ header {
    }
       .ingr-display {
          flex-direction: row;
+         min-width: 305px;
       }
       .ingr-header {
          border: none;
-         width: 5rem;
+         width: 45px;
          margin: 0;
+      }
+      .ingr-item {
+         margin: 5px 1px;
       }
    #search-section {
       margin-top: 5%;
    }
-}
-      /* screens up to 340px */
-@media screen and (max-width: 340px) {
-   #ingr-section {
-      justify-content: left;
-   }
-      .ingr-header {
-         width: 40px;
-         font-size: 10px;
-      }
 }
