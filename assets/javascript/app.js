@@ -68,16 +68,16 @@ function displayRecipe() {
 };
 
 $(document).ready(function (){
+    $('#chosen-ingr-list').empty();
     $('.ingr-item').on("click", function(){
-        if (userSelection= 0){
-            $('chosen-ingr-list').val("");
-        }
+        if (!userSelection){
             var userSelection= $(this).text().trim()+", "
             $('#chosen-ingr-list').append(userSelection)
             console.log(userSelection)
+        }
         
-    });//end of click function //
-}); //end .ready function//
+    //end of click function //
+})}) //end .ready function//
 
     $.ajax({
         url: queryURL,
