@@ -152,8 +152,12 @@ $("form").on("submit", function (event) {
   console.log("Hi")
   event.preventDefault();
   var newIngredient = $("#ingredient").val().trim();
-
-  $("#chosen-ingr-list").append(newIngredient);
+  var ingrBtn = $("<span>");
+  ingrBtn.attr("class", "chosen-ingr-item tag is-medium");
+  var ingrDelete = $("<button>")
+  ingrDelete.attr("class", "delete is-small")
+  ingrBtn.append(newIngredient, ingrDelete)
+  $("#chosen-ingr-list").append(ingrBtn);
 
   $("#ingredient").val("");
 
