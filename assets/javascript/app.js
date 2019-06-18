@@ -13,6 +13,22 @@ $("#submit-btn").on("click", function () {
   $("#recipe-section").empty();
 });
 
+var ingredientsList = [];
+
+// Add user chosen ingredients to a global array
+function checkIngr() {
+   $('.chosen-ingr-item').each(function () {
+      var ingredient = $(this).text().trim();
+      ingredientsList.push(ingredient);
+   });
+   console.log(ingredientsList);
+}
+
+// Call checkIngr Function when user searches for recipes
+$("#submit-btn").on("click", function () {
+   checkIngr();
+});
+
 function displayRecipe() {
 
   function checkIngredient{
