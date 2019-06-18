@@ -1,11 +1,8 @@
 
-<<<<<<< HEAD
 var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
 var queryURL=  "https://the-cocktail-db.p.rapidapi.com/random.php"
-=======
 var ingredient = ["eggs+", "apples+", "rice+"];
 var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
->>>>>>> 9e728a6bd48c3e195855b08c70fb799d40515f09
 var recipeIdArray = [];
 var recipeTitleArray=[];
 var recipeImageArray = [];
@@ -72,7 +69,6 @@ function displayRecipe() {
   })
 };
 
-<<<<<<< HEAD
 $(document).ready(function (){
     $('#chosen-ingr-list').empty();
     $('.ingr-item').on("click", function(){
@@ -112,7 +108,7 @@ $(document).ready(function (){
                         "X-RapidAPI-Key": "147749aee4mshcd867948b97e9f7p16bdacjsn257d0be55a77"
                     },
                     method:"GET",
-                    i: drinkDisplay,
+                    i: "drinkDisplay",
 
 
                 })
@@ -120,5 +116,3 @@ $(document).ready(function (){
             })
 
         
-=======
->>>>>>> 9e728a6bd48c3e195855b08c70fb799d40515f09
