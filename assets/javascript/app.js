@@ -1,4 +1,4 @@
-var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
+
 var queryURL=  "https://the-cocktail-db.p.rapidapi.com/random.php"
 var ingredient = ["eggs+", "apples+", "rice+"];
 var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
@@ -15,7 +15,11 @@ $("#submit-btn").on("click", function () {
 
 function displayRecipe() {
 
-
+  function checkIngredient{
+  if ($("#ingredient").val === response){
+    console.log("wrong")
+  }
+  }
   $.ajax({
     url: queryUrl,
     headers: {
@@ -34,12 +38,8 @@ function displayRecipe() {
       recipeIdArray.push(response[i].id);
 
       recipeString = recipeIdArray.join('%2C');
-
     }
 
-    console.log(recipeImageArray)
-    console.log(recipeTitleArray)
-    console.log(recipeIdArray)
 
     ajaxRecipeId();
 
@@ -62,22 +62,23 @@ function displayRecipe() {
     }
   })
 };
+
+
 $(document).ready(function (){
     $('#chosen-ingr-list').empty();
     $('.ingr-item').on("click", function(){
         if (!userSelection){
-            var userSelection= $(this).text().trim()+" "
-            var ingrBtn= $("<span>")
-            ingrBtn.attr("class","chosen-ingr-item tag is-medium")
-            var ingrDelete= $('<button>')
-            ingrDelete.attr("class","delete is-small")
-                ingrBtn.append(userSelection,ingrDelete)
-            $('#chosen-ingr-list').append(ingrBtn)
-            console.log(userSelection)
-        }
-        
-    //end of click function //
-})}) //end .ready function//
+            var userSelection= $(this).text().trim()+" ";
+            var ingrBtn= $("<span>");
+            ingrBtn.attr("class","chosen-ingr-item tag is-medium");
+            var ingrDelete= $('<button>');
+            ingrDelete.attr("class","delete is-small");
+            ingrBtn.append(userSelection,ingrDelete);
+            $('#chosen-ingr-list').append(ingrBtn);
+            console.log(userSelection);
+        };
+    })
+}) 
 
     $.ajax({
         url: queryURL,
@@ -114,7 +115,7 @@ function showRecipe() {
 
     var recipeResult = $("<div>");
     recipeResult.attr("class", "recipe-result");
-
+   
     var recipeTitle = $("<div>");
     recipeTitle.html("Title: " + recipeTitleArray[i]);
     recipeTitle.attr("class", "recipe-title")
@@ -136,7 +137,6 @@ function showRecipe() {
     recipeResult.append(recipeTitle, recipeImage, recipeLink);
     $("#recipe-section").append(recipeResult);
   }
-<<<<<<< HEAD
 };
 
 $("form").on("submit", function (event) {
@@ -149,11 +149,7 @@ $("form").on("submit", function (event) {
   $("#ingredient").val("");
 
 
-  if ($("#ingredient").val === response){
-    console.log("wrong")
-  }
+  
+
+  checkIngredient();
 })
-=======
- 
-}
->>>>>>> 4a00e302415c95e189eafe8c663a830f854f446e
