@@ -71,8 +71,13 @@ $(document).ready(function (){
     $('#chosen-ingr-list').empty();
     $('.ingr-item').on("click", function(){
         if (!userSelection){
-            var userSelection= $(this).text().trim()+", "
-            $('#chosen-ingr-list').append(userSelection)
+            var userSelection= $(this).text().trim()+" "
+            var ingrBtn= $("<span>")
+            ingrBtn.attr("class","chosen-ingr-item tag is-medium")
+            var ingrDelete= $('<button>')
+            ingrDelete.attr("class","delete is-small")
+                ingrBtn.append(userSelection,ingrDelete)
+            $('#chosen-ingr-list').append(ingrBtn)
             console.log(userSelection)
         }
         
@@ -88,8 +93,24 @@ $(document).ready(function (){
         method:"GET"
     }).then(function (response) {
         for (var i= 0; i< 1; i++){
-            drinkDisplay= response[i]
-            drinkName= response[i]
+            var drinkDisplay= response.drinks[i].idDrink
+            var drinkName= response.drinks[i].strDrink
             console.log(response)
-        }
-    })
+            console.log(drinkDisplay)
+            console.log(drinkName)
+        }}).then(function(response){
+                $.ajax({
+                    url: queryURL,
+                    headers: {
+                        "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
+                        "X-RapidAPI-Key": "147749aee4mshcd867948b97e9f7p16bdacjsn257d0be55a77"
+                    },
+                    method:"GET",
+                    i: drinkDisplay,
+
+
+                })
+
+            })
+
+        
