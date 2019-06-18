@@ -2,9 +2,9 @@
 var ingredient = ["eggs+", "chicken+", "rice+"];
 var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
 var recipeIdArray = [];
-var recipeTitleArray=[];
+var recipeTitleArray = [];
 var recipeImageArray = [];
-var recipeResultArray=[];
+var recipeResultArray = [];
 var recipeString;
 
 $("#submit-btn").on("click", function () {
@@ -26,20 +26,20 @@ function displayRecipe() {
 
     for (var i = 0; i < 10; i++) {
       var recipeTitle = response[i].title;
-      var recipeImage =response[i].image;
-  
+      var recipeImage = response[i].image;
+
       recipeImageArray.push(recipeImage);
       recipeTitleArray.push(recipeTitle)
       recipeIdArray.push(response[i].id);
 
       recipeString = recipeIdArray.join('%2C');
-      
+
     }
-   
+
     console.log(recipeImageArray)
     console.log(recipeTitleArray)
     console.log(recipeIdArray)
-  
+
     ajaxRecipeId();
 
     function ajaxRecipeId() {
@@ -55,47 +55,42 @@ function displayRecipe() {
         for (var i = 0; i < 10; i++) {
           var recipeList = response[i].sourceUrl;
           recipeResultArray.push(recipeList)
-         
-      }
-      console.log(recipeResultArray)
-      showRecipe();
+        }
+        showRecipe();
       })
     }
   })
 
 };
 
-function showRecipe(){
+function showRecipe() {
 
-  for (var i =0; i <10; i ++){
-  
+  for (var i = 0; i < 10; i++) {
+
     var recipeResult = $("<div>");
     recipeResult.attr("class", "recipe-result");
 
+    var recipeTitle = $("<div>");
+    recipeTitle.html("Title: " + recipeTitleArray[i]);
+    recipeTitle.attr("class", "recipe-title")
 
-  var recipeTitle = $("<div>");
-  recipeTitle.html("Title: " + recipeTitleArray[i]);
-  recipeTitle.attr("class", "recipe-title")
+    var recipeImage = $("<img>");
+    recipeImage.attr("src", recipeImageArray[i])
+    recipeImage.attr("class", "recipe-img");
 
+    var recipeList = $("<div>");
+    var thisLink = recipeResultArray[i];
+    recipeList.html(recipeResultArray[i])
+    recipeList.attr("class", "recipe-link");
 
-  var recipeImage = $("<img>");
-  recipeImage.attr("src", recipeImageArray[i])
-  recipeImage.attr("class", "recipe-img");
-
-  var recipeList = $("<div>");
-  var thisLink = recipeResultArray[i];
-  recipeList.html(recipeResultArray[i])
-  recipeList.attr("class", "recipe-link");
-
-  var recipeLink = $("<a>");
-  recipeLink.attr("href", thisLink);
-  recipeLink.text("Recipe Link")
+    var recipeLink = $("<a>");
+    recipeLink.attr("href", thisLink);
+    recipeLink.text("Recipe Link")
     console.log(thisLink)
-  
 
-  $(".recipe-result").append(recipeTitle, recipeImage, recipeLink) ;
-  $("#recipe-section").append(recipeResult)
+    recipeResult.append(recipeTitle, recipeImage, recipeLink);
+    $("#recipe-section").append(recipeResult);
   }
-
+ 
 }
 
