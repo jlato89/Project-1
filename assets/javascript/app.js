@@ -87,7 +87,8 @@ $(document).ready(function (){
 function showRecipe() {
 
   for (var i = 0; i < 10; i++) {
-
+    var thisLink = recipeResultArray[i];
+    
     var recipeResult = $("<div>");
     recipeResult.attr("class", "recipe-result");
    
