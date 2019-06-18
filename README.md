@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 # project-1
 
 Vanderbilt Bootcamp - Week 8 project
@@ -15,4 +14,4 @@ If possible I want to see other recipes that I can almost make and where to get 
 Target Audience: anyone who likes to or wants to cook at home.
 
 Problem: Not knowing what recipes are possible with the food you have on hand.
->>>>>>> 7caf0b841bb607148f8177168d8ed3d6feea7fee
+
