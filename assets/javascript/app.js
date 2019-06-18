@@ -2,7 +2,7 @@
 var queryURL=  "https://the-cocktail-db.p.rapidapi.com/random.php";
 
 var ingredientsList = [];
-var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredientsList.join('+');
+
 var recipeIdArray = [];
 var recipeTitleArray = [];
 var recipeImageArray = [];
@@ -10,9 +10,9 @@ var recipeResultArray = [];
 var recipeString;
 
 $("#submit-btn").on("click", function () {
-  displayRecipe()
   $("#recipe-section").empty();
   checkIngr();
+  displayRecipe()
 });
 
 
@@ -21,12 +21,13 @@ function checkIngr() {
    $('.chosen-ingr-item').each(function () {
       var ingredient = $(this).text().trim();
       ingredientsList.push(ingredient);
+   
    });
-   console.log(ingredientsList);
 }
 
 
 function displayRecipe() {
+  var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredientsList.join('+');
   $.ajax({
     url: queryUrl,
     headers: {
@@ -35,7 +36,7 @@ function displayRecipe() {
     },
     method: "GET"
   }).then(function (response) {
-
+    
     for (var i = 0; i < 10; i++) {
       var recipeTitle = response[i].title;
       var recipeImage = response[i].image;
