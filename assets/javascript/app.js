@@ -1,7 +1,8 @@
 
-var queryURL=  "https://the-cocktail-db.p.rapidapi.com/random.php"
-var ingredient = ["eggs+", "apples+", "rice+"];
-var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
+var queryURL=  "https://the-cocktail-db.p.rapidapi.com/random.php";
+
+var ingredientsList = [];
+var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredientsList.join('+');
 var recipeIdArray = [];
 var recipeTitleArray = [];
 var recipeImageArray = [];
@@ -11,9 +12,9 @@ var recipeString;
 $("#submit-btn").on("click", function () {
   displayRecipe()
   $("#recipe-section").empty();
+  checkIngr();
 });
 
-var ingredientsList = [];
 
 // Add user chosen ingredients to a global array
 function checkIngr() {
@@ -24,18 +25,8 @@ function checkIngr() {
    console.log(ingredientsList);
 }
 
-// Call checkIngr Function when user searches for recipes
-$("#submit-btn").on("click", function () {
-   checkIngr();
-});
 
 function displayRecipe() {
-
-  function checkIngredient{
-  if ($("#ingredient").val === response){
-    console.log("wrong")
-  }
-  }
   $.ajax({
     url: queryUrl,
     headers: {
@@ -155,6 +146,7 @@ function showRecipe() {
   }
 };
 
+//textbox user input
 $("form").on("submit", function (event) {
   console.log("Hi")
   event.preventDefault();
@@ -166,6 +158,4 @@ $("form").on("submit", function (event) {
 
 
   
-
-  checkIngredient();
 })
