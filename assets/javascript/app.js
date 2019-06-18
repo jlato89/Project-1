@@ -139,6 +139,7 @@ function showRecipe() {
 
     var recipeLink = $("<a>");
     recipeLink.attr("href", thisLink);
+    recipeLink.attr("class", "recipe-link");
     recipeLink.text("Recipe Link")
     console.log(thisLink)
 
