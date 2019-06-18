@@ -1,8 +1,4 @@
-
-var queryURL=  "https://the-cocktail-db.p.rapidapi.com/random.php";
-
 var ingredientsList = [];
-
 var recipeIdArray = [];
 var recipeTitleArray = [];
 var recipeImageArray = [];
@@ -12,7 +8,7 @@ var recipeString;
 $("#submit-btn").on("click", function () {
   $("#recipe-section").empty();
   checkIngr();
-  displayRecipe()
+  displayRecipe();
 });
 
 
@@ -21,7 +17,6 @@ function checkIngr() {
    $('.chosen-ingr-item').each(function () {
       var ingredient = $(this).text().trim();
       ingredientsList.push(ingredient);
-   
    });
 }
 
@@ -86,36 +81,8 @@ $(document).ready(function (){
             console.log(userSelection);
         };
     })
-}) 
+});
 
-    $.ajax({
-        url: queryURL,
-        headers: {
-            "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
-            "X-RapidAPI-Key": "147749aee4mshcd867948b97e9f7p16bdacjsn257d0be55a77"
-        },
-        method:"GET"
-    }).then(function (response) {
-        for (var i= 0; i< 1; i++){
-            var drinkDisplay= response.drinks[i].idDrink
-            var drinkName= response.drinks[i].strDrink
-            console.log(response)
-            console.log(drinkDisplay)
-            console.log(drinkName)
-        }}).then(function(response){
-                $.ajax({
-                    url: queryURL,
-                    headers: {
-                        "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
-                        "X-RapidAPI-Key": "147749aee4mshcd867948b97e9f7p16bdacjsn257d0be55a77"
-                    },
-                    method:"GET",
-                    i: "drinkDisplay",
-
-
-                })
-
-            })
 
 function showRecipe() {
 
@@ -131,11 +98,6 @@ function showRecipe() {
     var recipeImage = $("<img>");
     recipeImage.attr("src", recipeImageArray[i])
     recipeImage.attr("class", "recipe-img");
-
-    var recipeList = $("<div>");
-    var thisLink = recipeResultArray[i];
-    recipeList.html(recipeResultArray[i])
-    recipeList.attr("class", "recipe-link");
 
     var recipeLink = $("<a>");
     recipeLink.attr("href", thisLink);
