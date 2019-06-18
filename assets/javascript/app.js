@@ -149,7 +149,6 @@ function showRecipe() {
 
 //textbox user input
 $("form").on("submit", function (event) {
-  console.log("Hi")
   event.preventDefault();
   var newIngredient = $("#ingredient").val().trim();
   var ingrBtn = $("<span>");
@@ -161,6 +160,4 @@ $("form").on("submit", function (event) {
 
   $("#ingredient").val("");
 
-
-  
 })
