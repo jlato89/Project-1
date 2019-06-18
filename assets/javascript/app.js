@@ -57,9 +57,6 @@ function displayRecipe() {
         for (var i = 0; i < 10; i++) {
           recipeList = response[i].sourceUrl;
           recipeResultArray.push(recipeList)
-   
-         
-         
         }
         console.log(recipeResultArray)
       })
@@ -67,3 +64,13 @@ function displayRecipe() {
   })
 };
 
+
+  $("form").on("submit", function(event){
+    console.log("Hi")
+    event.preventDefault();
+    var newIngredient = $("#ingredient").val().trim();
+ 
+    $("#chosen-ingr-list").append(newIngredient);
+
+    $("#ingredient").val("");
+})
