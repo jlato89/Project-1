@@ -1,7 +1,4 @@
-var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
-var queryURL=  "https://the-cocktail-db.p.rapidapi.com/random.php"
-var ingredient = ["eggs+", "apples+", "rice+"];
-var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
+var ingredientsList = [];
 var recipeIdArray = [];
 var recipeTitleArray = [];
 var recipeImageArray = [];
@@ -9,11 +6,11 @@ var recipeResultArray = [];
 var recipeString;
 
 $("#submit-btn").on("click", function () {
-  displayRecipe()
   $("#recipe-section").empty();
+  checkIngr();
+  displayRecipe();
 });
 
-var ingredientsList = [];
 
 // Add user chosen ingredients to a global array
 function checkIngr() {
@@ -21,17 +18,11 @@ function checkIngr() {
       var ingredient = $(this).text().trim();
       ingredientsList.push(ingredient);
    });
-   console.log(ingredientsList);
 }
 
-// Call checkIngr Function when user searches for recipes
-$("#submit-btn").on("click", function () {
-   checkIngr();
-});
 
 function displayRecipe() {
-
-
+  var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredientsList.join('+');
   $.ajax({
     url: queryUrl,
     headers: {
@@ -40,7 +31,7 @@ function displayRecipe() {
     },
     method: "GET"
   }).then(function (response) {
-
+    
     for (var i = 0; i < 10; i++) {
       var recipeTitle = response[i].title;
       var recipeImage = response[i].image;
@@ -50,12 +41,8 @@ function displayRecipe() {
       recipeIdArray.push(response[i].id);
 
       recipeString = recipeIdArray.join('%2C');
-
     }
 
-    console.log(recipeImageArray)
-    console.log(recipeTitleArray)
-    console.log(recipeIdArray)
 
     ajaxRecipeId();
 
@@ -77,53 +64,25 @@ function displayRecipe() {
       })
     }
   })
-
 };
+
+
 $(document).ready(function (){
     $('#chosen-ingr-list').empty();
     $('.ingr-item').on("click", function(){
         if (!userSelection){
-            var userSelection= $(this).text().trim()+" "
-            var ingrBtn= $("<span>")
-            ingrBtn.attr("class","chosen-ingr-item tag is-medium")
-            var ingrDelete= $('<button>')
-            ingrDelete.attr("class","delete is-small")
-                ingrBtn.append(userSelection,ingrDelete)
-            $('#chosen-ingr-list').append(ingrBtn)
-            console.log(userSelection)
-        }
-        
-    //end of click function //
-})}) //end .ready function//
+            var userSelection= $(this).text().trim()+" ";
+            var ingrBtn= $("<span>");
+            ingrBtn.attr("class","chosen-ingr-item tag is-medium");
+            var ingrDelete= $('<button>');
+            ingrDelete.attr("class","delete is-small");
+            ingrBtn.append(userSelection,ingrDelete);
+            $('#chosen-ingr-list').append(ingrBtn);
+            console.log(userSelection);
+        };
+    })
+});
 
-    $.ajax({
-        url: queryURL,
-        headers: {
-            "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
-            "X-RapidAPI-Key": "147749aee4mshcd867948b97e9f7p16bdacjsn257d0be55a77"
-        },
-        method:"GET"
-    }).then(function (response) {
-        for (var i= 0; i< 1; i++){
-            var drinkDisplay= response.drinks[i].idDrink
-            var drinkName= response.drinks[i].strDrink
-            console.log(response)
-            console.log(drinkDisplay)
-            console.log(drinkName)
-        }}).then(function(response){
-                $.ajax({
-                    url: queryURL,
-                    headers: {
-                        "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
-                        "X-RapidAPI-Key": "147749aee4mshcd867948b97e9f7p16bdacjsn257d0be55a77"
-                    },
-                    method:"GET",
-                    i: "drinkDisplay",
-
-
-                })
-
-            })
 
 function showRecipe() {
 
@@ -131,7 +90,7 @@ function showRecipe() {
 
     var recipeResult = $("<div>");
     recipeResult.attr("class", "recipe-result");
-
+   
     var recipeTitle = $("<div>");
     recipeTitle.html("Title: " + recipeTitleArray[i]);
     recipeTitle.attr("class", "recipe-title")
@@ -140,18 +99,28 @@ function showRecipe() {
     recipeImage.attr("src", recipeImageArray[i])
     recipeImage.attr("class", "recipe-img");
 
-    var recipeList = $("<div>");
-    var thisLink = recipeResultArray[i];
-    recipeList.html(recipeResultArray[i])
-    recipeList.attr("class", "recipe-link");
-
     var recipeLink = $("<a>");
     recipeLink.attr("href", thisLink);
+    recipeLink.attr("class", "recipe-link");
     recipeLink.text("Recipe Link")
     console.log(thisLink)
 
     recipeResult.append(recipeTitle, recipeImage, recipeLink);
     $("#recipe-section").append(recipeResult);
   }
- 
-}
+};
+
+//textbox user input
+$("form").on("submit", function (event) {
+  event.preventDefault();
+  var newIngredient = $("#ingredient").val().trim();
+  var ingrBtn = $("<span>");
+  ingrBtn.attr("class", "chosen-ingr-item tag is-medium");
+  var ingrDelete = $("<button>")
+  ingrDelete.attr("class", "delete is-small")
+  ingrBtn.append(newIngredient, ingrDelete)
+  $("#chosen-ingr-list").append(ingrBtn);
+
+  $("#ingredient").val("");
+
+})
