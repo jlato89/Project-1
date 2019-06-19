@@ -88,6 +88,7 @@ $(document).ready(function () {
             ingrBtn.attr("class", "chosen-ingr-item tag is-medium")
             var ingrDelete = $('<button>')
             ingrDelete.attr("class", "delete is-small")
+            ingrDelete.attr("id", "delete-btn")
             ingrBtn.append(userSelection, ingrDelete)
             $('#chosen-ingr-list').append(ingrBtn)
             console.log(userSelection)
@@ -107,7 +108,7 @@ $.ajax({
     method: "GET"
 }).then(function (response) {
     for (var i = 0; i < 1; i++) {
-        var drinkDisplay = response.drinks[i].strDrinkThumb
+        var drinkImg = response.drinks[i].strDrinkThumb
         var drinkName = response.drinks[i].strDrink
         var drinkInstructions= response.drinks[i].strInstructions
         var drinkIngredient1= response.drinks[i].strIngredient1
@@ -120,7 +121,7 @@ $.ajax({
         var drinkIngredient8= response.drinks[i].strIngredient8
         var drinkIngredient9= response.drinks[i].strIngredient9
         console.log(response)
-        console.log(drinkDisplay)
+        console.log(drinkImg)
         console.log(drinkName)
         console.log(drinkInstructions)
         console.log(drinkIngredient1)
@@ -128,6 +129,7 @@ $.ajax({
         console.log(drinkIngredient3)
         console.log(drinkIngredient4)
         console.log(drinkIngredient5)
+
         
         }
     }
@@ -165,3 +167,4 @@ function showRecipe() {
     }
 
 }
+

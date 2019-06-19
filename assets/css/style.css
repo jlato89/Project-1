@@ -134,7 +134,44 @@ header {
          padding: 0 5px;
          margin-top: 0;
       }
+#drink-display-section {
+   justify-content: space-between;
+   display: flex;
+   flex-wrap: wrap;
+   border: 1px solid black;
+}
+   .drink-result {
+      margin-left: 2.5%;
+      margin-top: 1%;
+      margin-bottom: 1.5%;
+      width: 30%;
+   }
+      .drink-title {
+         color: #dbdbdb;
+         font-size: 1.3rem;
+         font-weight: bold;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+         overflow: hidden;   
+         margin-bottom: 2px;
+      }
+      .drinkImg {
+         background: #6e6968;
+         color: #e7b14d;
+         padding: 0 5px;
+         margin-top: 0;
+      }
+      .drink-link{
+         background: #6e6968;
+         color: #e7b14d;
+         padding: 0 5px;
+         margin-top: 0;
 
+      }
+
+
+     
+      
 /* !Media Query's! */
       /* screens up to 950px */
 @media screen and (max-width: 950px) {
