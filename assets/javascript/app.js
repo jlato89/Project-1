@@ -125,3 +125,6 @@ $("form").on("submit", function (event) {
   $("#ingredient").val("");
 
 })
+
+
+console.log("test")
