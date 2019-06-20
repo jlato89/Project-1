@@ -1,5 +1,3 @@
-var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
-var queryURL = "https://the-cocktail-db.p.rapidapi.com/random.php"
 var ingredient = [];
 var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredient + "+";
 var recipeIdArray = [];
@@ -134,6 +132,4 @@ function showRecipe() {
         recipeResult.append(recipeTitle, recipeImage, recipeLink);
         $("#recipe-section").append(recipeResult);
     }
-
 }
-
