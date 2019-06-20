@@ -129,11 +129,12 @@ header {
          margin-bottom: 2px;
       }
       .recipe-link {
-         display: inline-block;
+         display: block;
+         width: fit-content;
          background: #6e6968;
          color: #e7b14d;
          padding: 0 5px;
-         margin-top: 0;
+         margin: 0 auto;
       }
 
 /* !Media Query's! */
@@ -176,8 +177,14 @@ header {
    #search-section {
       margin-top: 5%;
    }
-   .recipe-title {
-      font-size: 1.1rem;
-      margin-bottom: 2px;
+   .recipe-result {
+      width: 90%;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 20px;
    }
+      .recipe-title {
+         font-size: 1.8rem;
+         margin-bottom: 2px;
+      }
 }
