@@ -98,7 +98,7 @@ $(document).ready(function () {
     })
 }) //end .ready function//
 
-
+// Delete Button Fucntion//
 $("#chosen-ingr-list").on("click", ".delete", function(event){
     event.preventDefault()
         $(this).parent().remove();
