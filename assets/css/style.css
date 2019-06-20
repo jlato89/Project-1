@@ -10,9 +10,10 @@ body {
 #bg-img {
    background: url(../images/bg.jif);
    /* background: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65); */
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: top right;
+   background-image: url(../images/bg.jif), url(../images/bg.jif);
+   background-size: auto;
+   background-position: top right, bottom left;
+   background-repeat: no-repeat, repeat;
 }
 .overlay{
    background: rgba(68, 68, 68, 0.5);
@@ -38,6 +39,7 @@ header {
       margin-bottom: 15px;
    }
    #sub-title {
+      color: #fff;
       font-style: italic;
       margin-top: 0px;
       margin-bottom: 40px
@@ -154,17 +156,13 @@ header {
       font-size: 10px;
    }
    #bg-img {
-      background-image: url(../images/bg.jif), url(../images/bg.jif);
-      background-size: 200%, auto;
-      background-position: top right, 0px 0px;
-      background-repeat: no-repeat, repeat;
+      background-size: 250%, auto;
    }
    #title {
       font-size: 3rem;
       margin-bottom: 10px;
    }
    #sub-title {
-      color: #fff;
       margin-bottom: 5%;
    }
    #ingr-section {
