@@ -6,7 +6,7 @@ $.ajax({
     },
     method: "GET"
 }).then(function (response) {
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i<0; i++) {
         var drinkImg = response.drinks[i].strDrinkThumb
         var drinkName = response.drinks[i].strDrink
         var drinkInstructions= response.drinks[i].strInstructions
@@ -33,4 +33,4 @@ $.ajax({
         }
     }
 )
-$('#drinkImg').prepend(drinkImg)
+$('#drinkImg').attr("src", drinkImg)
