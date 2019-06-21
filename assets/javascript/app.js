@@ -14,22 +14,21 @@ $("#submit-btn").on("click", function () {
 
 // Add user chosen ingredients to a global array
 function checkIngr() {
+  
   $('.chosen-ingr-item').each(function () {
     var ingredient = $(this).text().trim();
     ingredientsList.push(ingredient);
   });
-}
-
 
 function displayRecipe() {
   var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredientsList.join('+');
   $.ajax({
-    url: queryUrl,
-    headers: {
-      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-      'X-RapidAPI-Key': '98db7bca28msh8d5ab6517d13d17p17dbecjsn45b21b9d6bda'
-    },
-    method: "GET"
+	url: queryUrl,
+	headers: {
+	  'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+	  'X-RapidAPI-Key': '98db7bca28msh8d5ab6517d13d17p17dbecjsn45b21b9d6bda'
+	},
+	method: "GET"
   }).then(function (response) {
 
     for (var i = 0; i < 10; i++) {
@@ -63,9 +62,9 @@ function displayRecipe() {
         showRecipe();
       })
     }
+
   })
 };
-
 
 $(document).ready(function () {
   $('#chosen-ingr-list').empty();
@@ -81,7 +80,14 @@ $(document).ready(function () {
       console.log(userSelection);
     };
   })
+
 });
+
+// Delete Button Fucntion//
+$("#chosen-ingr-list").on("click", ".delete", function(event){
+	event.preventDefault()
+		$(this).parent().remove();
+})
 
 
 function showRecipe() {
@@ -149,8 +155,6 @@ function userValidation() {
     }
   })
 }
-
-
 function errorModal() {
   var modal = $("#myModal")[0];
   var span = $(".modal-box")[0];
@@ -168,3 +172,7 @@ function errorModal() {
   }
 
 }
+
+  $("#ingredient").val("");
+});
+
