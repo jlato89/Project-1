@@ -19,7 +19,7 @@ function checkIngr() {
     var ingredient = $(this).text().trim();
     ingredientsList.push(ingredient);
   });
-
+}
 function displayRecipe() {
   var queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ingredients=" + ingredientsList.join('+');
   $.ajax({
@@ -155,6 +155,8 @@ function userValidation() {
     }
   })
 }
+
+
 function errorModal() {
   var modal = $("#myModal")[0];
   var span = $(".modal-box")[0];
@@ -173,6 +175,4 @@ function errorModal() {
 
 }
 
-  $("#ingredient").val("");
-});
 
