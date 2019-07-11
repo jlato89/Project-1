@@ -98,7 +98,7 @@ function showRecipe() {
     recipeResult.attr("class", "recipe-result");
 
     var recipeTitle = $("<div>");
-    recipeTitle.html("Title: " + recipeTitleArray[i]);
+    recipeTitle.html(recipeTitleArray[i]);
     recipeTitle.attr("class", "recipe-title")
 
     var recipeImage = $("<img>");
